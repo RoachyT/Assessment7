@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "AddGuest";
+}
+
+<h2>Register</h2>
+
+<form action="~/Database/SaveNewGuest" method="post">
+    <input type="hidden" name="GuestID" />
+    <input type="text" name="FirstName" required placeholder="First Name" />
+    <input type="text" name="LastName" required placeholder="Last Name" /><br />
+    Will you be attending?:
+    <input type="checkbox" name="Attending" value="Yes"  placeholder="Yes" />
+    <label for="Yes">Yes</label>
+    <input type="checkbox" name="Attending" value="No"  placeholder="No" />
+    <label for="No">No</label><br />
+    If so, Date Attending:
+    <input type="checkbox" name="AttendanceDate" id="fourteen" value="fourteen" />
+    <label for="fourteen">12/14/18</label>
+    <input type="checkbox" name="Watched" id="fifteen" value="fifteen" />
+    <label for="fifteen">12/15/18</label><br />
+    <input type="text" name="EmailAddress" required placeholder="Email Address" /><br />
+    If you are bringing a guest, please provide their name:
+    <input type="text" name="Guest" placeholder="Guest Name" /><br />
+
+    <input type="submit" class="btn-info" />
+</form>

@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "BringDish";
+}
+
+<h2>Bring a Dish</h2>
+
+<form action="~/Database/SaveNewDish" method="post">
+    <input type="hidden" name="DishID" />
+    <input type="text" name="PersonName" required placeholder="Name" /><br /><br />
+    <input type="text" name="PhoneNumber" required placeholder="Phone Number" /><br /><br />
+    <input type="text" name="DishName" required placeholder="Dish Name" /><br /><br />
+    <input type="text" name="DishDescription" placeholder="Dish Description" /><br /><br />
+    Dietary Restrictions?<br />
+    <input type="checkbox" name="Restriction" id="Vegan" value="Vegan" />
+    <label for="Vegan">Vegan</label>
+    <input type="checkbox" name="Restriction" id="None" value="None" />
+    <label for="None">None</label>
+    <input type="checkbox" name="Restriction" id="GlutenFree" value="GlutenFree" />
+    <label for="GlutenFree">Gluten Free</label><br />
+    <input type="checkbox" name="Restriction" id="Vegetarian" value="Vegetarian" />
+    <label for="Vegetarian">Vegetarian</label><br />
+    <input type="submit" class="btn-info" />
+</form>

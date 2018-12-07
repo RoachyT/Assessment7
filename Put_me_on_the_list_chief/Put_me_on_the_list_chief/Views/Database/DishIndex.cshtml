@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "DishIndex";
+}
+
+<h2>Dish List</h2>
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Phone Number</th>
+        <th>Dish Name</th>
+        <th>Dish Description</th>
+        <th>Restrictions</th>
+        
+
+    </tr>
+    @foreach (var dish in ViewBag.DishList)
+    {
+        <tr>
+            <td>@dish.PersonName</td>
+            <td>@dish.PhoneNumber</td>
+            <td>@dish.DishName</td>
+            <td>@dish.DishDescription</td>
+            <td>@dish.Restriction</td>
+
+            <td><a href="~/Database/EditDish?DishID=@dish.DishID" class="btn-primary">Edit this Entry</a></td>
+            <td><a href="~/Database/DeleteDish?DishID=@dish.DishID" class="btn-primary">Delete this Entry</a></td>
+
+        </tr>
+    }
+</table>
+
+<a href="~/Database/BringDish" class="btn-group">Add a new Dish to the Database</a>
+
+

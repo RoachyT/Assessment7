@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "EditDish";
+}
+
+<h2>Edit Dish</h2>
+
+
+@model Put_me_on_the_list_chief.Models.Dish
+
+<form action="~/Database/SaveDishChanges" method="post">
+    <input type="hidden" name="DishID" value="@Model.DishID" />
+    <input type="text" name="PersonName" value="@Model.PersonName" placeholder="@Model.PersonName" />
+    <input type="text" name="PhoneNumber" value="@Model.PhoneNumber" placeholder="@Model.PhoneNumber" />
+
+    <input type="text" name="DishName" value="@Model.DishName" placeholder="@Model.DishName" />
+
+    <input type="text" name="Description" value="@Model.DishDescription" placeholder="@Model.DishDescription" />
+    
+
+    @if (Model.Restriction == "Vegan")
+    {
+        <input type="radio" name="Restriction" id="None" value="None" required />
+        <label for="None">None</label>
+        <input type="radio" name="Restriction" checked id="Vegan" value="Vegan" required />
+        <label for="Vegan">Vegan</label>
+        <input type="radio" name="Restriction" id="GlutenFree" value="GlutenFree" />
+        <label for="GlutenFree">Gluten Free</label>
+        <input type="radio" name="Restriction" id="Vegetarian" value="Vegetarian" />
+        <label for="Vegetarian">Vegetarian</label>
+    }
+    @if (Model.Restriction == "Gluten Free")
+    {
+        <input type="radio" name="Restriction" id="None" value="None" required />
+        <label for="None">None</label>
+        <input type="radio" name="Restriction" id="Vegan" value="Vegan" required />
+        <label for="Vegan">Vegan</label>
+        <input type="radio" name="Restriction" id="GlutenFree" checked value="GlutenFree" />
+        <label for="GlutenFree">Gluten Free</label>
+        <input type="radio" name="Restriction" id="Vegetarian" value="Vegetarian" />
+        <label for="Vegetarian">Vegetarian</label>
+    }
+    @if (Model.Restriction == "Vegetarian")
+    {
+        <input type="radio" name="Restriction" id="None" value="None" required />
+        <label for="None">None</label>
+        <input type="radio" name="Restriction" id="Vegan" value="Vegan" required />
+        <label for="Vegan">Vegan</label>
+        <input type="radio" name="Restriction" id="GlutenFree" value="GlutenFree" />
+        <label for="GlutenFree">Gluten Free</label>
+        <input type="radio" name="Restriction" id="Vegetarian" checked value="Vegetarian" />
+        <label for="Vegetarian">Vegetarian</label>
+    }
+    @if (Model.Restriction == "None")
+    {
+        <input type="radio" name="Restriction" checked id="None" value="None" required />
+        <label for="None">None</label>
+        <input type="radio" name="Restriction" id="Vegan" value="Vegan" required />
+        <label for="Vegan">Vegan</label>
+        <input type="radio" name="Restriction" id="GlutenFree" value="GlutenFree" />
+        <label for="GlutenFree">Gluten Free</label>
+        <input type="radio" name="Restriction" id="Vegetarian" checked value="Vegetarian" />
+        <label for="Vegetarian">Vegetarian</label>
+    }
+    <input type="submit" class="btn-default" />
+</form>

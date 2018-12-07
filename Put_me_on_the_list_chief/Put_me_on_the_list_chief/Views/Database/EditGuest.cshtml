@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "EditGuest";
+}
+
+<h2>Edit Guest</h2>
+
+@model Put_me_on_the_list_chief.Models.Guest
+
+<form action="~/Database/SaveGuestChanges" method="post">
+    <input type="hidden" name="GuestID" value="@Model.GuestID" />
+    <input type="text" name="FirstName" value="@Model.FirstName" placeholder="@Model.FirstName" />
+    <input type="text" name="LastName" value="@Model.LastName" placeholder="@Model.LastName" />
+    <input type="text" name="Attending" value="@Model.Attending" placeholder="@Model.Attending" />
+    Attending:
+    @if (Model.Attending == "Yes")
+    {
+        <input type="checkbox" name="Attending" checked id="Yes" value="Yes" />
+        <label for="Yes">Yes</label>
+        <input type="checkbox" name="Attending" id="No" value="No" />
+        <label for="No">No</label>
+    }
+    else
+    {
+        <input type="checkbox" name="Attending" checked id="Yes" value="Yes" />
+        <label for="Yes">Yes</label>
+        <input type="checkbox" name="Attending" id="No" value="No" />
+        <label for="No">No</label>
+    }
+    <input type="text" name="AttendanceDate" value="@Model.AttendanceDate" placeholder="@Model.AttendanceDate" />
+    <input type="text" name="EmailAddress" value="@Model.EmailAddress" placeholder="@Model.EmailAddress" />
+    <input type="text" name="Guest" value="@Model.Guest1" placeholder="@Model.Guest1" />
+
+
+    <input type="submit" class="btn-default" />
+</form>
+
