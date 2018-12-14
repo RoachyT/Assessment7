@@ -9,9 +9,9 @@
 
 <form action="~/Database/SaveGuestChanges" method="post">
     <input type="hidden" name="GuestID" value="@Model.GuestID" />
-    <input type="text" name="FirstName" value="@Model.FirstName" placeholder="@Model.FirstName" />
-    <input type="text" name="LastName" value="@Model.LastName" placeholder="@Model.LastName" />
-    <input type="text" name="Attending" value="@Model.Attending" placeholder="@Model.Attending" />
+    <input type="text" name="FirstName" value="@Model.FirstName" placeholder="@Model.FirstName" /><br />
+    <input type="text" name="LastName" value="@Model.LastName" placeholder="@Model.LastName" /><br />
+    <input type="text" name="Attending" value="@Model.Attending" placeholder="@Model.Attending" /><br />
     Attending:
     @if (Model.Attending == "Yes")
     {
@@ -27,7 +27,14 @@
         <input type="checkbox" name="Attending" id="No" value="No" />
         <label for="No">No</label>
     }
-    <input type="text" name="AttendanceDate" value="@Model.AttendanceDate" placeholder="@Model.AttendanceDate" />
+    <br />
+
+<input type="checkbox" name="Attending" checked id="Yes" value="Yes" />
+<label for="Yes">Yes</label>
+<input type="checkbox" name="Attending" id="No" value="No" />
+<label for="No">No</label>
+}
+
     <input type="text" name="EmailAddress" value="@Model.EmailAddress" placeholder="@Model.EmailAddress" />
     <input type="text" name="Guest" value="@Model.Guest1" placeholder="@Model.Guest1" />
 

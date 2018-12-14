@@ -10,14 +10,15 @@
 
 <form action="~/Database/SaveDishChanges" method="post">
     <input type="hidden" name="DishID" value="@Model.DishID" />
-    <input type="text" name="PersonName" value="@Model.PersonName" placeholder="@Model.PersonName" />
-    <input type="text" name="PhoneNumber" value="@Model.PhoneNumber" placeholder="@Model.PhoneNumber" />
+   Name: <input type="text" name="PersonName" value="@Model.PersonName" placeholder="@Model.PersonName" /><br />
 
-    <input type="text" name="DishName" value="@Model.DishName" placeholder="@Model.DishName" />
+   Phone Number:<input type="text" name="PhoneNumber" value="@Model.PhoneNumber" placeholder="@Model.PhoneNumber" /><br />
 
-    <input type="text" name="Description" value="@Model.DishDescription" placeholder="@Model.DishDescription" />
+   Dish name: <input type="text" name="DishName" value="@Model.DishName" placeholder="@Model.DishName" /><br />
+
+   Description: <input type="text" name="DishDescription" value="@Model.DishDescription" placeholder="@Model.DishDescription" /><br />
     
-
+    Restrictions: 
     @if (Model.Restriction == "Vegan")
     {
         <input type="radio" name="Restriction" id="None" value="None" required />

@@ -4,25 +4,25 @@
     <EntitySetMapping Name="Dishes">
       <EntityTypeMapping TypeName="PartyDBModel.Dish">
         <MappingFragment StoreEntitySet="Dish">
-          <ScalarProperty Name="DishID" ColumnName="DishID" />
-          <ScalarProperty Name="PersonName" ColumnName="PersonName" />
-          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-          <ScalarProperty Name="DishName" ColumnName="DishName" />
-          <ScalarProperty Name="DishDescription" ColumnName="DishDescription" />
           <ScalarProperty Name="Restriction" ColumnName="Restriction" />
+          <ScalarProperty Name="DishDescription" ColumnName="DishDescription" />
+          <ScalarProperty Name="DishName" ColumnName="DishName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PersonName" ColumnName="PersonName" />
+          <ScalarProperty Name="DishID" ColumnName="DishID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Guests">
       <EntityTypeMapping TypeName="PartyDBModel.Guest">
         <MappingFragment StoreEntitySet="Guest">
-          <ScalarProperty Name="GuestID" ColumnName="GuestID" />
-          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-          <ScalarProperty Name="LastName" ColumnName="LastName" />
-          <ScalarProperty Name="AttendanceDate" ColumnName="AttendanceDate" />
-          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
-          <ScalarProperty Name="Guest1" ColumnName="Guest" />
           <ScalarProperty Name="Attending" ColumnName="Attending" />
+          <ScalarProperty Name="Guest1" ColumnName="Guest" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="AttendanceDate" ColumnName="AttendanceDate" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="GuestID" ColumnName="GuestID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -1,5 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="PartyDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="PartyDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Dishes" EntityType="PartyDBModel.Dish" />
+    <EntitySet Name="Guests" EntityType="PartyDBModel.Guest" />
+  </EntityContainer>
   <EntityType Name="Dish">
     <Key>
       <PropertyRef Name="DishID" />
@@ -23,8 +27,4 @@
     <Property Name="Guest1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Attending" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
   </EntityType>
-  <EntityContainer Name="PartyDBEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Dishes" EntityType="Self.Dish" />
-    <EntitySet Name="Guests" EntityType="Self.Guest" />
-  </EntityContainer>
 </Schema>

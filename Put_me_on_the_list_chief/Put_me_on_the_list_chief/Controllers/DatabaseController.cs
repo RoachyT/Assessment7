@@ -10,18 +10,21 @@ namespace Put_me_on_the_list_chief.Controllers
     public class DatabaseController : Controller
     {
         // GET: Database
+        [Authorize]
         public ActionResult Index()
         {
             PartyDBEntities ORM = new PartyDBEntities();
             ViewBag.GuestList = ORM.Guests.ToList();
             return View();
         }
+        [Authorize]
         public ActionResult DishIndex()
         {
             PartyDBEntities ORM = new PartyDBEntities();
             ViewBag.DishList = ORM.Dishes.ToList();
             return View();
         }
+        [Authorize]
         public ActionResult BringDish()
         {
             return View();
@@ -30,6 +33,7 @@ namespace Put_me_on_the_list_chief.Controllers
         {
             return View();
         }
+        [Authorize]
         public ActionResult SaveNewDish(Dish newDish)
         {
             PartyDBEntities ORM = new PartyDBEntities();
@@ -54,6 +58,7 @@ namespace Put_me_on_the_list_chief.Controllers
 
             return RedirectToAction("DishIndex");
         }
+        [Authorize]
         public ActionResult SaveNewGuest(Guest newGuest)
         {
             PartyDBEntities ORM = new PartyDBEntities();
@@ -74,19 +79,21 @@ namespace Put_me_on_the_list_chief.Controllers
             }
             return RedirectToAction("Index");
         }
-       
+       [Authorize]
         public ActionResult EditGuest(int GuestID)
         {
             PartyDBEntities ORM = new PartyDBEntities();
             Guest found = ORM.Guests.Find(GuestID);
             return View(found);
         }
+        [Authorize]
         public ActionResult EditDish(int DishID)
         {
             PartyDBEntities ORM = new PartyDBEntities();
             Dish found = ORM.Dishes.Find(DishID);
             return View(found);
         }
+        [Authorize]
         public ActionResult SaveGuestChanges(Guest updatedGuest)
         {
             PartyDBEntities ORM = new PartyDBEntities();
@@ -102,7 +109,7 @@ namespace Put_me_on_the_list_chief.Controllers
             ORM.SaveChanges();
             return RedirectToAction("Index");
         }
-
+        [Authorize]
         public ActionResult SaveDishChanges(Dish updatedDish)
         {
             PartyDBEntities ORM = new PartyDBEntities();
@@ -111,13 +118,12 @@ namespace Put_me_on_the_list_chief.Controllers
             oldDish.PhoneNumber = updatedDish.PhoneNumber;
             oldDish.DishName = updatedDish.DishName;
             oldDish.DishDescription = updatedDish.DishDescription;
-           
-
             ORM.Entry(oldDish).State = System.Data.Entity.EntityState.Modified;
             ORM.SaveChanges();
             return RedirectToAction("DishIndex");
 
         }
+        [Authorize]
         public ActionResult DeleteGuest(int GuestID)
         {
             PartyDBEntities ORM = new PartyDBEntities();
@@ -127,6 +133,7 @@ namespace Put_me_on_the_list_chief.Controllers
             return RedirectToAction("Index");
 
         }
+        [Authorize]
         public ActionResult DeleteDish(int DishID)
         {
             PartyDBEntities ORM = new PartyDBEntities();
@@ -136,9 +143,6 @@ namespace Put_me_on_the_list_chief.Controllers
             return RedirectToAction("DishIndex");
 
         }
-
-
-
-
+        
     }
 }

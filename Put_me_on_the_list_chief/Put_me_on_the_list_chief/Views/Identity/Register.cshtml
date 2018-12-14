@@ -1,0 +1,19 @@
+﻿@model Put_me_on_the_list_chief.Models.RegistrationModel
+
+
+<h2>Register</h2>
+
+@using (Html.BeginForm("Register", "Identity", FormMethod.Post))
+
+{
+    @Html.ValidationSummary()
+    @Html.LabelFor(x => x.Email) @Html.TextBoxFor(x => x.Email)<br />
+    @Html.LabelFor(x => x.Password) @Html.PasswordFor(x => x.Password)<br />
+    @Html.LabelFor(x => x.ConfirmPassword) @Html.PasswordFor(x => x.ConfirmPassword)<br />
+
+    @Html.LabelFor(x => x.FirstName) @Html.TextBoxFor(x => x.FirstName)<br />
+    @Html.LabelFor(x => x.LastName) @Html.TextBoxFor(x => x.LastName)<br />
+
+    <input class="btn-info" type="submit" value="Register" />
+
+}
