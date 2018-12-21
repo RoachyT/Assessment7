@@ -161,12 +161,14 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\APIController.cs" />
     <Compile Include="Controllers\DatabaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IdentityController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CharacterModel.cs" />
     <Compile Include="Models\Dish.cs">
       <DependentUpon>PartyDB.tt</DependentUpon>
     </Compile>
@@ -260,6 +262,7 @@
     <Content Include="Views\Database\EditDish.cshtml" />
     <Content Include="Views\Identity\Register.cshtml" />
     <Content Include="Views\Identity\Login.cshtml" />
+    <Content Include="Views\API\ShowCharacterData.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
