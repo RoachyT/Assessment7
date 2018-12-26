@@ -16,6 +16,7 @@
     <EntitySetMapping Name="Guests">
       <EntityTypeMapping TypeName="PartyDBModel.Guest">
         <MappingFragment StoreEntitySet="Guest">
+          <ScalarProperty Name="CharacterID" ColumnName="CharacterID" />
           <ScalarProperty Name="Attending" ColumnName="Attending" />
           <ScalarProperty Name="Guest1" ColumnName="Guest" />
           <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
@@ -23,6 +24,18 @@
           <ScalarProperty Name="LastName" ColumnName="LastName" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
           <ScalarProperty Name="GuestID" ColumnName="GuestID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Characters">
+      <EntityTypeMapping TypeName="PartyDBModel.Character">
+        <MappingFragment StoreEntitySet="Character">
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Book" ColumnName="Book" />
+          <ScalarProperty Name="Allegiance" ColumnName="Allegiance" />
+          <ScalarProperty Name="House" ColumnName="House" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CharacterID" ColumnName="CharacterID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -3,6 +3,7 @@
   <EntityContainer Name="PartyDBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Dishes" EntityType="PartyDBModel.Dish" />
     <EntitySet Name="Guests" EntityType="PartyDBModel.Guest" />
+    <EntitySet Name="Characters" EntityType="PartyDBModel.Character" />
   </EntityContainer>
   <EntityType Name="Dish">
     <Key>
@@ -26,5 +27,17 @@
     <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Guest1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Attending" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="CharacterID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Character">
+    <Key>
+      <PropertyRef Name="CharacterID" />
+    </Key>
+    <Property Name="CharacterID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="House" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Allegiance" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Book" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
   </EntityType>
 </Schema>

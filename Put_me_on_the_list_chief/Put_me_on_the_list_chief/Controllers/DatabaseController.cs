@@ -31,6 +31,8 @@ namespace Put_me_on_the_list_chief.Controllers
         }
         public ActionResult AddGuest()
         {
+
+            var CharList = new List<Character>();
             return View();
         }
         [Authorize]
@@ -61,6 +63,7 @@ namespace Put_me_on_the_list_chief.Controllers
         [Authorize]
         public ActionResult SaveNewGuest(Guest newGuest)
         {
+
             PartyDBEntities ORM = new PartyDBEntities();
             List<Guest> guests = ORM.Guests.Where(c => c.LastName.Contains(newGuest.LastName)
                &&

@@ -13,7 +13,7 @@ namespace Put_me_on_the_list_chief.Controllers
 {
     public class APIController : Controller
     {
-
+      
 
         Url characterURL = new Url("https://www.anapioficeandfire.com/api/Characters/");
         // this tells the program what browsers its compatable with. Making a const so we only have to call the variable and can update it in one place. 
@@ -40,15 +40,22 @@ namespace Put_me_on_the_list_chief.Controllers
         [HttpGet]
         public ActionResult ShowCharacterData()
         {
-            var character = new CharacterModel();
-            var characNumber = new List<int>{ 583, 339, 16, 27, 206, 271 };
-            for (int i = 0; i < characNumber.Count; i++)
+            var character = new Character();
+       
+            
+            return View(ReturnList());
+        }
+
+        public List<Character> ReturnList()
+        {
+            var characters = new List<Character>();
+            var GotNumb = new List<int>() { 583, 339, 16, 27, 206, 271 };
+            foreach (var x in GotNumb)
             {
-
-
+                
 
                 HttpWebRequest request =
-                    WebRequest.CreateHttp($"https://www.anapioficeandfire.com/api/characters/{i}");
+                    WebRequest.CreateHttp($"https://www.anapioficeandfire.com/api/characters/{x}");
 
                 request.UserAgent = userAgent;
 
@@ -60,14 +67,20 @@ namespace Put_me_on_the_list_chief.Controllers
                 {
                     StreamReader data = new StreamReader(response.GetResponseStream());
                     JObject dataObject = JObject.Parse(data.ReadToEnd());
-                    character.name = dataObject["name"].ToString();
-                    character.gender = dataObject["gender"].ToString();
+
+                    var gcharacter = new Character()
+                    { Name = dataObject["name"].ToString(),
+                      Gender = dataObject["gender"].ToString(),
 
 
+                    };
+
+                    characters.Add(gcharacter);
                 }
             }
-            return View();
+            return characters;
         }
+
 
     }
 }

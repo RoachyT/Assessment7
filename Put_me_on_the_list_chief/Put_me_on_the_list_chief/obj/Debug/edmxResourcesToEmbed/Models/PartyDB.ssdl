@@ -1,5 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="PartyDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Character">
+    <Key>
+      <PropertyRef Name="CharacterID" />
+    </Key>
+    <Property Name="CharacterID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="House" Type="nvarchar" MaxLength="50" />
+    <Property Name="Allegiance" Type="nvarchar" MaxLength="50" />
+    <Property Name="Book" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gender" Type="nchar" MaxLength="10" />
+  </EntityType>
   <EntityType Name="Dish">
     <Key>
       <PropertyRef Name="DishID" />
@@ -22,8 +33,10 @@
     <Property Name="EmailAddress" Type="nvarchar" MaxLength="50" />
     <Property Name="Guest" Type="nvarchar" MaxLength="50" />
     <Property Name="Attending" Type="nvarchar" MaxLength="5" />
+    <Property Name="CharacterID" Type="nvarchar(max)" />
   </EntityType>
   <EntityContainer Name="PartyDBModelStoreContainer">
+    <EntitySet Name="Character" EntityType="Self.Character" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Dish" EntityType="Self.Dish" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Guest" EntityType="Self.Guest" Schema="dbo" store:Type="Tables" />
   </EntityContainer>

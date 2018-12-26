@@ -262,4 +262,3 @@ C:\Users\rtoles\Desktop\Assessment7\Put_me_on_the_list_chief\Put_me_on_the_list_
 C:\Users\rtoles\Desktop\Assessment7\Put_me_on_the_list_chief\Put_me_on_the_list_chief\bin\Microsoft.Owin.Security.xml
 C:\Users\rtoles\Desktop\Assessment7\Put_me_on_the_list_chief\Put_me_on_the_list_chief\bin\Microsoft.Owin.Security.Cookies.xml
 C:\Users\rtoles\Desktop\Assessment7\Put_me_on_the_list_chief\Put_me_on_the_list_chief\bin\Microsoft.Owin.Security.OAuth.xml
-C:\Users\rtoles\Desktop\Assessment7\Put_me_on_the_list_chief\Put_me_on_the_list_chief\obj\Debug\Put_me_on_the_list_chief.csprojAssemblyReference.cache

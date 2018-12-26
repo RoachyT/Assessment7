@@ -27,5 +27,6 @@ namespace Put_me_on_the_list_chief.Models
     
         public virtual DbSet<Dish> Dishes { get; set; }
         public virtual DbSet<Guest> Guests { get; set; }
+        public virtual DbSet<Character> Characters { get; set; }
     }
 }

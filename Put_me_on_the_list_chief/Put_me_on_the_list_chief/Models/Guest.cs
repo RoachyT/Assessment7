@@ -21,5 +21,6 @@ namespace Put_me_on_the_list_chief.Models
         public string EmailAddress { get; set; }
         public string Guest1 { get; set; }
         public string Attending { get; set; }
+        public string CharacterID { get; set; }
     }
 }
